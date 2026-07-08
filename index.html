@@ -36,6 +36,33 @@
       padding: 40px 20px 80px;
     }
 
+    /* Mission statement */
+    .mission {
+      max-width: 780px;
+      margin: 0 auto 44px;
+      padding: 4px;
+    }
+    .mission h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 18px;
+      background: linear-gradient(135deg, #8b5cf6, #6ea8fe);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .mission p {
+      font-size: 1.12rem;
+      line-height: 1.65;
+      color: #d4d4d8;
+      margin: 0 0 14px;
+    }
+    .mission .tagline {
+      font-weight: 700;
+      color: #2dd4bf;
+    }
+
     /* One row per app */
     .app-row {
       display: flex;
@@ -118,6 +145,7 @@
     @media (max-width: 640px) {
       .app-name { min-width: 100%; margin-bottom: 4px; }
       .btn { flex: 1 1 auto; justify-content: center; }
+      .mission h1 { font-size: 1.7rem; }
     }
   </style>
 </head>
@@ -125,6 +153,14 @@
   <img class="banner" src="/banner.png" alt="Heylon Studio">
 
   <main class="content">
+
+    <!-- ===== Mission statement ===== -->
+    <section class="mission">
+      <h1>Average person. Genuinely useful apps.</h1>
+      <p>Hi — Heylon Studio is a tiny, one-person operation. No big company, no boardroom, no buzzword bingo. Just an ordinary person who kept muttering &ldquo;surely there&rsquo;s an easier app for this&hellip;&rdquo; and then, well, going ahead and building it.</p>
+      <p>The mission is simple: make honest, no-nonsense apps that fix everyday annoyances for everyday people. The kind of tools your mum, your mate, and you can pick up ... follow a simple tutorial and Voila!.</p>
+      <p class="tagline">Simple ideas, built with care (and a suspicious amount of coffee). If one of these little apps makes your day a bit easier, that&rsquo;s mission accomplished.</p>
+    </section>
 
     <!-- ===== App: Photo Purge ===== -->
     <div class="app-row">
