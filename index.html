@@ -36,11 +36,16 @@
       padding: 40px 20px 80px;
     }
 
-    /* Mission statement */
+    /* Mission statement — framed box, full content width, centered text */
     .mission {
-      max-width: 780px;
-      margin: 0 auto 44px;
-      padding: 4px;
+      width: 100%;
+      margin: 0 auto 40px;
+      padding: 38px; /* ~1cm on all sides */
+      text-align: center;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1.5px solid rgba(139, 92, 246, 0.45);
+      border-radius: 18px;
+      box-shadow: 0 10px 40px rgba(110, 92, 246, 0.15);
     }
     .mission h1 {
       font-size: 2.1rem;
@@ -56,30 +61,31 @@
       font-size: 1.12rem;
       line-height: 1.65;
       color: #d4d4d8;
-      margin: 0 0 14px;
+      margin: 0 auto 14px;
+      max-width: 760px;
     }
     .mission .tagline {
       font-weight: 700;
       color: #2dd4bf;
     }
 
-    /* One row per app */
+    /* One row per app — buttons stay on a single line */
     .app-row {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       align-items: center;
-      gap: 16px;
-      padding: 24px 28px;
+      gap: 12px;
+      padding: 20px 24px;
       margin-bottom: 24px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 18px;
     }
     .app-name {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       font-weight: 800;
-      margin-right: 12px;
-      min-width: 210px;
+      margin-right: 8px;
+      min-width: 150px;
       background: linear-gradient(135deg, #8b5cf6, #6ea8fe);
       -webkit-background-clip: text;
       background-clip: text;
@@ -89,11 +95,11 @@
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 0.98rem;
       font-weight: 700;
-      padding: 14px 26px;
+      padding: 11px 18px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.14);
       color: #f2f2f5;
@@ -101,34 +107,48 @@
       transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
       white-space: nowrap;
     }
-    .btn:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.1); }
+    .btn:hover { transform: translateY(-2px); }
 
-    .btn-ios {
-      background: linear-gradient(135deg, #6ea8fe, #8b5cf6);
+    /* Left-to-right colour progression: blue -> turquoise -> purple -> pink */
+    .btn-1 {
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
       border: none;
-      box-shadow: 0 8px 24px rgba(110, 92, 246, 0.4);
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
     }
-    .btn-ios:hover { box-shadow: 0 12px 30px rgba(110, 92, 246, 0.6); }
+    .btn-1:hover { box-shadow: 0 12px 30px rgba(59, 130, 246, 0.6); }
 
-    .btn-play {
-      background: linear-gradient(135deg, #bbf7d0, #86efac);
-      border: none;
-      color: #14532d;
-      box-shadow: 0 8px 24px rgba(134, 239, 172, 0.4);
-    }
-    .btn-play:hover { box-shadow: 0 12px 30px rgba(134, 239, 172, 0.6); }
-
-    .btn-video {
+    .btn-2 {
       background: linear-gradient(135deg, #2dd4bf, #14b8a6);
       border: none;
       box-shadow: 0 8px 24px rgba(45, 212, 191, 0.4);
     }
-    .btn-video:hover { box-shadow: 0 12px 30px rgba(45, 212, 191, 0.6); }
+    .btn-2:hover { box-shadow: 0 12px 30px rgba(45, 212, 191, 0.6); }
+
+    .btn-3 {
+      background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+      border: none;
+      box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+    }
+    .btn-3:hover { box-shadow: 0 12px 30px rgba(139, 92, 246, 0.6); }
+
+    .btn-4 {
+      background: linear-gradient(135deg, #f472b6, #ec4899);
+      border: none;
+      box-shadow: 0 8px 24px rgba(236, 72, 153, 0.4);
+    }
+    .btn-4:hover { box-shadow: 0 12px 30px rgba(236, 72, 153, 0.6); }
+
+    /* Privacy Policy stays dark/black */
+    .btn-privacy {
+      background: #0e0e12;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .btn-privacy:hover { background: #1a1a20; }
 
     .btn .badge {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      padding: 3px 9px;
+      padding: 3px 8px;
       border-radius: 6px;
       background: rgba(0, 0, 0, 0.2);
       text-transform: uppercase;
@@ -142,9 +162,12 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 640px) {
+    /* On small screens, let the buttons wrap so nothing overflows */
+    @media (max-width: 760px) {
+      .app-row { flex-wrap: wrap; }
       .app-name { min-width: 100%; margin-bottom: 4px; }
       .btn { flex: 1 1 auto; justify-content: center; }
+      .mission { padding: 22px; }
       .mission h1 { font-size: 1.7rem; }
     }
   </style>
@@ -158,28 +181,28 @@
     <section class="mission">
       <h1>Average person. Genuinely useful apps.</h1>
       <p>Hi — Heylon Studio is a tiny, one-person operation. No big company, no boardroom, no buzzword bingo. Just an ordinary person who kept muttering &ldquo;surely there&rsquo;s an easier app for this&hellip;&rdquo; and then, well, going ahead and building it.</p>
-      <p>The mission is simple: make honest, no-nonsense apps that fix everyday annoyances for everyday people. The kind of tools your mum, your mate, and you can pick up ... follow a simple tutorial and Voila!.</p>
+      <p>The mission is simple: make honest, no-nonsense apps that fix everyday annoyances for everyday people. The kind of tools your mum, your mate, and you can pick up with zero instructions and a bit of a grin.</p>
       <p class="tagline">Simple ideas, built with care (and a suspicious amount of coffee). If one of these little apps makes your day a bit easier, that&rsquo;s mission accomplished.</p>
     </section>
 
     <!-- ===== App: Photo Purge ===== -->
     <div class="app-row">
       <span class="app-name">Photo Purge</span>
-      <a class="btn btn-ios" href="https://apps.apple.com/app/id6774990861" target="_blank" rel="noopener">Download iOS</a>
-      <a class="btn btn-play" href="#" aria-disabled="true">Download Google Play <span class="badge">Soon</span></a>
-      <a class="btn btn-video" href="/photopurge-quick-review.html" target="_blank" rel="noopener">Quick Review</a>
-      <a class="btn btn-video" href="/photopurge-tutorial.html" target="_blank" rel="noopener">Tutorial</a>
-      <a class="btn" href="/legal/privacy.html">Privacy Policy</a>
+      <a class="btn btn-1" href="https://apps.apple.com/app/id6774990861" target="_blank" rel="noopener">Download iOS</a>
+      <a class="btn btn-2" href="#" aria-disabled="true">Download Google Play <span class="badge">Soon</span></a>
+      <a class="btn btn-3" href="/photopurge-quick-review.html" target="_blank" rel="noopener">Quick Review</a>
+      <a class="btn btn-4" href="/photopurge-tutorial.html" target="_blank" rel="noopener">Tutorial</a>
+      <a class="btn btn-privacy" href="/legal/privacy.html">Privacy Policy</a>
     </div>
 
     <!-- ===== App: Retire Roadmap (placeholders) ===== -->
     <div class="app-row">
       <span class="app-name">Retire Roadmap</span>
-      <a class="btn btn-ios" href="#" aria-disabled="true">Download iOS <span class="badge">Soon</span></a>
-      <a class="btn btn-play" href="#" aria-disabled="true">Download Google Play <span class="badge">Soon</span></a>
-      <a class="btn btn-video" href="#" aria-disabled="true">Quick Review <span class="badge">Soon</span></a>
-      <a class="btn btn-video" href="#" aria-disabled="true">Tutorial <span class="badge">Soon</span></a>
-      <a class="btn" href="#" aria-disabled="true">Privacy Policy <span class="badge">Soon</span></a>
+      <a class="btn btn-1" href="#" aria-disabled="true">Download iOS <span class="badge">Soon</span></a>
+      <a class="btn btn-2" href="#" aria-disabled="true">Download Google Play <span class="badge">Soon</span></a>
+      <a class="btn btn-3" href="#" aria-disabled="true">Quick Review <span class="badge">Soon</span></a>
+      <a class="btn btn-4" href="#" aria-disabled="true">Tutorial <span class="badge">Soon</span></a>
+      <a class="btn btn-privacy" href="#" aria-disabled="true">Privacy Policy <span class="badge">Soon</span></a>
     </div>
 
   </main>
