@@ -27,11 +27,18 @@
       color: #f2f2f5;
     }
 
-    /* Full-width banner */
+    /* Compact header logo */
+    .banner-wrap {
+      text-align: center;
+      padding: 14px 20px 0;
+    }
     .banner {
       display: block;
-      width: 100%;
+      width: min(420px, 72vw);
+      max-height: 88px;
       height: auto;
+      object-fit: contain;
+      margin: 0 auto;
     }
 
     .content {
@@ -268,7 +275,9 @@
   </style>
 </head>
 <body>
-  <img class="banner" src="/banner.png" alt="Heylon Studio">
+  <div class="banner-wrap">
+    <img class="banner" src="/banner.png" alt="Heylon Studio">
+  </div>
 
   <main class="content">
 
