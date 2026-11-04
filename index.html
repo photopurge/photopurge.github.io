@@ -11,186 +11,282 @@
   <meta name="retireroadmap-tutorial" content="https://youtu.be/nPKjuQ0Y_XQ">
   <!-- Retire Roadmap quick review video — update content= when you publish a new video. -->
   <meta name="retireroadmap-quick-review" content="https://youtu.be/jJfWVhEMVl4">
-  <title>Heylon Studio — Apps</title>
+  <title>Heylon Studio — Apps, Stories, Music &amp; Discoveries</title>
+  <meta name="description" content="Heylon Studio makes honest, no-nonsense apps that fix everyday annoyances.">
   <link rel="icon" type="image/png" href="/icon.png">
-  <meta property="og:title" content="Heylon Studio — Apps">
-  <meta property="og:description" content="Apps by Heylon Studio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Heylon Studio — Apps, Stories, Music &amp; Discoveries">
+  <meta property="og:description" content="Honest, no-nonsense apps for everyday people. Ideas brought to life.">
   <meta property="og:image" content="/banner.png">
   <meta property="og:type" content="website">
   <style>
-    :root { color-scheme: dark; }
+    :root {
+      color-scheme: dark;
+      --bg: #07070d;
+      --surface: rgba(255, 255, 255, 0.045);
+      --surface-strong: rgba(255, 255, 255, 0.07);
+      --border: rgba(255, 255, 255, 0.09);
+      --text: #f4f4f7;
+      --muted: #a1a1b5;
+      --cyan: #22d3ee;
+      --blue: #3b82f6;
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --teal: #2dd4bf;
+      --amber: #fbbf24;
+      --grad: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 55%, #ec4899 100%);
+    }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 50% -10%, #1b1b3a 0%, #0e0e12 55%);
-      color: #f2f2f5;
+      font-family: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      background-image:
+        radial-gradient(900px 500px at 15% -5%, rgba(34, 211, 238, 0.18), transparent 60%),
+        radial-gradient(900px 600px at 90% 0%, rgba(139, 92, 246, 0.22), transparent 60%),
+        radial-gradient(700px 500px at 50% 110%, rgba(236, 72, 153, 0.12), transparent 60%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
 
-    /* Compact header logo */
-    .banner-wrap {
-      text-align: center;
-      padding: 14px 20px 0;
-    }
-    .banner {
-      display: block;
-      width: min(420px, 72vw);
-      max-height: 88px;
-      height: auto;
-      object-fit: contain;
-      margin: 0 auto;
-    }
+    .wrap { width: min(1120px, 100% - 32px); margin: 0 auto; }
 
-    .content {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px 80px;
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(7, 7, 13, 0.7);
+      border-bottom: 1px solid var(--border);
     }
-
-    /* Mission statement — framed box, full content width, centered text */
-    .mission {
-      width: 100%;
-      margin: 0 auto 40px;
-      padding: 38px; /* ~1cm on all sides */
-      text-align: center;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1.5px solid rgba(139, 92, 246, 0.45);
-      border-radius: 18px;
-      box-shadow: 0 10px 40px rgba(110, 92, 246, 0.15);
-    }
-    .mission h1 {
-      font-size: 2.1rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin: 0 0 18px;
-      background: linear-gradient(135deg, #8b5cf6, #6ea8fe);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .mission p {
-      font-size: 1.12rem;
-      line-height: 1.65;
-      color: #d4d4d8;
-      margin: 0 auto 14px;
-      max-width: 760px;
-    }
-    .mission .tagline {
-      font-weight: 700;
-      color: #2dd4bf;
-    }
-
-    /* One row per app — buttons stay on a single line */
-    .app-row {
+    .nav {
       display: flex;
-      flex-wrap: nowrap;
       align-items: center;
-      gap: 12px;
-      padding: 20px 24px;
-      margin-bottom: 24px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 64px;
     }
-    .app-name {
-      font-size: 1.5rem;
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; letter-spacing: 0.02em; }
+    .brand img { width: 36px; height: 36px; border-radius: 10px; }
+    .nav-links { display: flex; gap: 22px; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.95rem; font-weight: 500; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 88px 0 56px; text-align: center; }
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.35);
+      background: rgba(34, 211, 238, 0.08);
+      color: var(--cyan);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      margin: 22px auto 0;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
       font-weight: 800;
-      margin-right: 8px;
-      min-width: 150px;
-      background: linear-gradient(135deg, #8b5cf6, #6ea8fe);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      max-width: 900px;
+    }
+    .grad-text {
+      background: var(--grad);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    .hero .lede {
+      margin: 22px auto 0;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 2vw, 1.2rem);
+    }
+    .pillars {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 32px;
+      list-style: none;
+      padding: 0;
+    }
+    .pillars li {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .pillars li:nth-child(1) { color: var(--cyan); }
+    .pillars li:nth-child(2) { color: #67e8f9; }
+    .pillars li:nth-child(3) { color: #a78bfa; }
+    .pillars li:nth-child(4) { color: #f472b6; }
 
+    /* ---------- Sections ---------- */
+    section { padding: 56px 0; }
+    .section-head { text-align: center; margin-bottom: 36px; }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .section-head p { margin: 10px auto 0; color: var(--muted); max-width: 580px; }
+
+    /* ---------- App cards ---------- */
+    .apps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .app-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      border-radius: 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      overflow: hidden;
+    }
+    .app-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: var(--grad);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+    .app-card:hover { transform: translateY(-4px); background: var(--surface-strong); }
+    .app-card:hover::before { opacity: 1; }
+    .app-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .app-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.35);
+      flex-shrink: 0;
+    }
+    .app-card h3 { margin: 0; font-size: 1.45rem; font-weight: 800; }
+    .app-card .tag { margin: 2px 0 0; color: var(--muted); font-size: 0.92rem; }
+    .app-card .desc { color: #c9c9d6; margin: 6px 0 22px; font-size: 0.98rem; }
+
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       text-decoration: none;
-      font-size: 0.98rem;
-      font-weight: 700;
-      padding: 11px 18px;
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 10px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: #f2f2f5;
+      border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.04);
-      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+      color: var(--text);
       white-space: nowrap;
       cursor: pointer;
-      font-family: inherit;
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
-    .btn:hover { transform: translateY(-2px); }
-
-    /* Left-to-right colour progression: blue -> turquoise -> purple -> pink */
-    .btn-1 {
-      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    .btn:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.09); border-color: rgba(255, 255, 255, 0.2); }
+    .btn-primary {
+      background: var(--grad);
       border: none;
-      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+      color: #0b0b14;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35);
     }
-    .btn-1:hover { box-shadow: 0 12px 30px rgba(59, 130, 246, 0.6); }
-
-    .btn-2 {
-      background: linear-gradient(135deg, #2dd4bf, #14b8a6);
-      border: none;
-      box-shadow: 0 8px 24px rgba(45, 212, 191, 0.4);
-    }
-    .btn-2:hover { box-shadow: 0 12px 30px rgba(45, 212, 191, 0.6); }
-
-    .btn-3 {
-      background: linear-gradient(135deg, #a78bfa, #8b5cf6);
-      border: none;
-      box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
-    }
-    .btn-3:hover { box-shadow: 0 12px 30px rgba(139, 92, 246, 0.6); }
-
-    .btn-4 {
-      background: linear-gradient(135deg, #f472b6, #ec4899);
-      border: none;
-      box-shadow: 0 8px 24px rgba(236, 72, 153, 0.4);
-    }
-    .btn-4:hover { box-shadow: 0 12px 30px rgba(236, 72, 153, 0.6); }
-
-    /* Privacy Policy stays dark/black */
-    .btn-privacy {
-      background: #0e0e12;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-    .btn-privacy:hover { background: #1a1a20; }
-
+    .btn-primary:hover { background: var(--grad); box-shadow: 0 12px 32px rgba(139, 92, 246, 0.55); color: #0b0b14; }
     .btn-support {
       background: linear-gradient(135deg, #fbbf24, #f59e0b);
       border: none;
       color: #1a1205;
-      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+      font-weight: 700;
     }
-    .btn-support:hover { box-shadow: 0 12px 30px rgba(245, 158, 11, 0.55); }
-
+    .btn-support:hover { color: #1a1205; box-shadow: 0 10px 26px rgba(245, 158, 11, 0.45); }
     .btn-qa {
       background: linear-gradient(135deg, #34d399, #10b981);
       border: none;
       color: #052e1c;
-      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
-    }
-    .btn-qa:hover { box-shadow: 0 12px 30px rgba(16, 185, 129, 0.55); }
-
-    .btn .badge {
-      font-size: 0.7rem;
       font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 6px;
-      background: rgba(0, 0, 0, 0.2);
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
     }
+    .btn-qa:hover { color: #052e1c; }
 
+    /* ---------- Mission ---------- */
+    .mission {
+      padding: 44px;
+      border-radius: 24px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(139, 92, 246, 0.12), rgba(34, 211, 238, 0.04));
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      box-shadow: 0 20px 60px rgba(110, 92, 246, 0.18);
+    }
+    .mission h2 {
+      margin: 0 0 18px;
+      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .mission p { color: #d4d4de; max-width: 740px; margin: 0 auto 14px; font-size: 1.05rem; }
+    .mission .tagline { color: var(--teal); font-weight: 700; }
+
+    /* ---------- Channel strip ---------- */
+    .channel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 28px 32px;
+      border-radius: 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    .channel h2 { margin: 0; font-size: 1.4rem; font-weight: 800; }
+    .channel p { margin: 4px 0 0; color: var(--muted); }
+    .btn-yt {
+      background: #ff0033;
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(255, 0, 51, 0.3);
+    }
+    .btn-yt:hover { color: #fff; }
+
+    /* ---------- Footer ---------- */
     footer {
       text-align: center;
-      padding: 32px 20px 48px;
+      padding: 36px 16px 56px;
       color: #71717a;
       font-size: 0.9rem;
+      border-top: 1px solid var(--border);
     }
+    footer .foot-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 12px; flex-wrap: wrap; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
 
+    /* ---------- Support modal ---------- */
     .support-overlay {
       display: none;
       position: fixed;
@@ -201,6 +297,7 @@
       padding: 20px;
       background: rgba(8, 8, 14, 0.72);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
     .support-overlay.is-open { display: flex; }
     .support-card {
@@ -209,31 +306,20 @@
       overflow: auto;
       padding: 28px 24px 24px;
       border-radius: 20px;
-      background: #16161f;
+      background: #13131d;
       border: 1px solid rgba(139, 92, 246, 0.4);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
     }
     .support-card h2 {
       margin: 0 0 8px;
       font-size: 1.45rem;
-      background: linear-gradient(135deg, #8b5cf6, #6ea8fe);
+      background: var(--grad);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .support-card .lead {
-      margin: 0 0 18px;
-      color: #d4d4d8;
-      font-size: 0.98rem;
-      line-height: 1.5;
-    }
-    .support-card label {
-      display: block;
-      margin: 0 0 6px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #e4e4e7;
-    }
+    .support-card .lead { margin: 0 0 18px; color: #d4d4de; font-size: 0.98rem; line-height: 1.5; }
+    .support-card label { display: block; margin: 0 0 6px; font-size: 0.85rem; font-weight: 700; color: #e4e4e7; }
     .support-card .field { margin-bottom: 14px; }
     .support-card input,
     .support-card select,
@@ -242,17 +328,12 @@
       padding: 11px 12px;
       border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.14);
-      background: #0e0e12;
+      background: #0b0b12;
       color: #f2f2f5;
       font: inherit;
     }
     .support-card textarea { min-height: 140px; resize: vertical; }
-    .support-card .actions {
-      display: flex;
-      gap: 10px;
-      justify-content: flex-end;
-      margin-top: 8px;
-    }
+    .support-card .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; }
     .support-card .status {
       display: none;
       margin: 0 0 12px;
@@ -260,70 +341,158 @@
       border-radius: 10px;
       font-size: 0.92rem;
     }
-    .support-card .status.is-ok {
-      display: block;
-      background: rgba(45, 212, 191, 0.15);
-      color: #5eead4;
-    }
-    .support-card .status.is-err {
-      display: block;
-      background: rgba(248, 113, 113, 0.15);
-      color: #fca5a5;
-    }
+    .support-card .status.is-ok { display: block; background: rgba(45, 212, 191, 0.15); color: #5eead4; }
+    .support-card .status.is-err { display: block; background: rgba(248, 113, 113, 0.15); color: #fca5a5; }
     .hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
 
-    /* On small screens, let the buttons wrap so nothing overflows */
-    @media (max-width: 760px) {
-      .app-row { flex-wrap: wrap; }
-      .app-name { min-width: 100%; margin-bottom: 4px; }
-      .btn { flex: 1 1 auto; justify-content: center; }
-      .mission { padding: 22px; }
-      .mission h1 { font-size: 1.7rem; }
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      .apps { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links a.hide-sm { display: none; }
+      .nav-links { gap: 14px; }
+      .hero { padding: 56px 0 40px; }
+      .mission { padding: 26px 20px; }
+      .app-card { padding: 22px; }
+      .btn { flex: 1 1 auto; }
+      .channel { padding: 22px; }
+      .btn-yt { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <div class="banner-wrap">
-    <img class="banner" src="/banner.png" alt="Heylon Studio">
-  </div>
 
-  <main class="content">
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main">
+      <a class="brand" href="#top" aria-label="Heylon Studio home">
+        <img src="/icon.png" alt="">
+        <span>HeylonStudio</span>
+      </a>
+      <div class="nav-links">
+        <a href="#apps">Apps</a>
+        <a href="#about" class="hide-sm">About</a>
+        <a href="#channel" class="hide-sm">Channel</a>
+        <a href="#support">Support</a>
+      </div>
+    </nav>
+  </header>
 
-    <!-- ===== Mission statement ===== -->
-    <section class="mission">
-      <h1>Average person. Genuinely useful apps.</h1>
-      <p>Heylon Studio is a tiny company, no boardroom, no buzzword bingo. Just some average people that kept muttering &ldquo;surely there&rsquo;s an easier app for this&hellip;&rdquo; and then, well, going ahead and building it.</p>
-      <p>The mission is simple: make honest, no-nonsense apps that fix everyday annoyances for everyday people. The kind of tools your mum, your mate, and you can pick up ... watch the tutorials and Voila!</p>
-      <p class="tagline">Simple ideas, built with care (and a suspicious amount of coffee). If one of these apps makes your day a bit easier, that&rsquo;s mission accomplished.</p>
+  <main id="top">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Heylon Studio</span>
+        <h1>Apps, stories, music &amp; <span class="grad-text">discoveries</span></h1>
+        <p class="lede">Honest, no-nonsense apps that fix everyday annoyances. Ideas brought to life.</p>
+        <ul class="pillars">
+          <li>Apps</li>
+          <li>Stories</li>
+          <li>Music</li>
+          <li>Discoveries</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- ===== App: Photo Purge ===== -->
-    <div class="app-row">
-      <span class="app-name">Photo Purge</span>
-      <a class="btn btn-1" href="https://apps.apple.com/app/id6774990861" target="_blank" rel="noopener">Download iOS</a>
-      <a class="btn btn-2" href="https://play.google.com/store/apps/details?id=com.michp.photopurge" target="_blank" rel="noopener">Download Google Play</a>
-      <a class="btn btn-3" href="/photopurge-quick-review.html" target="_blank" rel="noopener">Quick Review</a>
-      <a class="btn btn-4" href="/photopurge-tutorial.html" target="_blank" rel="noopener">Tutorial</a>
-      <a class="btn btn-privacy" href="/legal/privacy.html">Privacy Policy</a>
-      <button type="button" class="btn btn-support" data-open-support data-app="Photo Purge">Support</button>
-    </div>
+    <!-- ===== Apps ===== -->
+    <section id="apps">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Our apps</h2>
+          <p>Small tools, built with care, for everyday life.</p>
+        </div>
 
-    <!-- ===== App: Retire Roadmap (placeholders) ===== -->
-    <div class="app-row">
-      <span class="app-name">Retire Roadmap</span>
-      <a class="btn btn-1" href="https://apple.co/4yHNSHy" target="_blank" rel="noopener">Download iOS</a>
-      <a class="btn btn-2" href="https://play.google.com/store/apps/details?id=com.michp.retirementroadmap" target="_blank" rel="noopener">Download Google Play</a>
-      <a class="btn btn-3" href="/retireroadmap-quick-review.html" target="_blank" rel="noopener">Quick Review</a>
-      <a class="btn btn-4" href="/retireroadmap-tutorial.html" target="_blank" rel="noopener">Tutorial</a>
-      <a class="btn btn-privacy" href="/legal/retire-roadmap-privacy.html">Privacy Policy</a>
-      <button type="button" class="btn btn-support" data-open-support data-app="Retire Roadmap">Support</button>
-      <a class="btn btn-qa" href="https://heylonstudio.github.io/legal/retire-roadmap-qa.html">Q&amp;A</a>
-    </div>
+        <div class="apps">
+
+          <!-- Photo Purge -->
+          <article class="app-card">
+            <div class="app-top">
+              <img class="app-icon" src="/icons/PhotoPurge.png" alt="Photo Purge app icon" width="56" height="56">
+              <div>
+                <h3>Photo Purge</h3>
+                <p class="tag">Clear the clutter from your photo library</p>
+              </div>
+            </div>
+            <p class="desc">Work through your photos quickly and decide what stays and what goes.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://apps.apple.com/app/id6774990861" target="_blank" rel="noopener">Download iOS</a>
+              <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.michp.photopurge" target="_blank" rel="noopener">Google Play</a>
+              <a class="btn" href="/photopurge-quick-review.html" target="_blank" rel="noopener">Quick review</a>
+              <a class="btn" href="/photopurge-tutorial.html" target="_blank" rel="noopener">Tutorial</a>
+              <a class="btn" href="/legal/privacy.html">Privacy</a>
+              <button type="button" class="btn btn-support" data-open-support data-app="Photo Purge">Support</button>
+            </div>
+          </article>
+
+          <!-- Retire Roadmap -->
+          <article class="app-card">
+            <div class="app-top">
+              <img class="app-icon" src="/icons/RetireRoadmap.png" alt="Retire Roadmap app icon" width="56" height="56">
+              <div>
+                <h3>Retire Roadmap</h3>
+                <p class="tag">Plan the years ahead, one step at a time</p>
+              </div>
+            </div>
+            <p class="desc">A simple roadmap to help you think through retirement, with no jargon.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://apple.co/4yHNSHy" target="_blank" rel="noopener">Download iOS</a>
+              <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.michp.retirementroadmap" target="_blank" rel="noopener">Google Play</a>
+              <a class="btn" href="/retireroadmap-quick-review.html" target="_blank" rel="noopener">Quick review</a>
+              <a class="btn" href="/retireroadmap-tutorial.html" target="_blank" rel="noopener">Tutorial</a>
+              <a class="btn" href="/legal/retire-roadmap-privacy.html">Privacy</a>
+              <button type="button" class="btn btn-support" data-open-support data-app="Retire Roadmap">Support</button>
+              <a class="btn btn-qa" href="https://heylonstudio.github.io/legal/retire-roadmap-qa.html">Q&amp;A</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About / mission ===== -->
+    <section id="about">
+      <div class="wrap">
+        <div class="mission">
+          <h2>Average person. <span class="grad-text">Genuinely useful apps.</span></h2>
+          <p>Heylon Studio is a tiny company, no boardroom, no buzzword bingo. Just some average people that kept muttering &ldquo;surely there&rsquo;s an easier app for this&hellip;&rdquo; and then, well, going ahead and building it.</p>
+          <p>The mission is simple: make honest, no-nonsense apps that fix everyday annoyances for everyday people. The kind of tools your mum, your mate, and you can pick up &mdash; watch the tutorials and Voila!</p>
+          <p class="tagline">Simple ideas, built with care (and a suspicious amount of coffee). If one of these apps makes your day a bit easier, that&rsquo;s mission accomplished.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== YouTube channel ===== -->
+    <section id="channel">
+      <div class="wrap">
+        <div class="channel">
+          <div>
+            <h2>Stories, music &amp; discoveries on YouTube</h2>
+            <p>Tutorials, app walkthroughs and the stories behind the builds.</p>
+          </div>
+          <a class="btn btn-yt" href="https://www.youtube.com/@HeylonStudio" target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+      </div>
+    </section>
 
   </main>
 
-  <footer>© 2026 Michelle Heylon Pienaar · Heylon Studio</footer>
+  <footer>
+    <div class="foot-links">
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+      <a href="https://www.youtube.com/@HeylonStudio" target="_blank" rel="noopener">YouTube</a>
+      <a href="#support" data-open-support>Support</a>
+    </div>
+    <div>© 2026 Michelle Heylon Pienaar · Heylon Studio</div>
+  </footer>
 
+  <!-- ===== Support modal ===== -->
   <div class="support-overlay" id="support-overlay" role="dialog" aria-modal="true" aria-labelledby="support-title" hidden>
     <div class="support-card">
       <h2 id="support-title">Request support</h2>
@@ -352,7 +521,7 @@
           <textarea id="support-message" name="message" required maxlength="4000" placeholder="What you were trying to do, what happened, and your device / app version if you know them."></textarea>
         </div>
         <div class="actions">
-          <button type="button" class="btn btn-privacy" data-close-support>Cancel</button>
+          <button type="button" class="btn" data-close-support>Cancel</button>
           <button type="submit" class="btn btn-support" id="support-submit">Send</button>
         </div>
       </form>
@@ -381,7 +550,8 @@
       }
 
       document.querySelectorAll('[data-open-support]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
+        btn.addEventListener('click', function (e) {
+          if (btn.tagName === 'A') e.preventDefault();
           openSupport(btn.getAttribute('data-app'));
         });
       });
