@@ -77,13 +77,17 @@
       min-height: 64px;
     }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.01em; color: var(--text); }
-    .brand img { width: 46px; height: 46px; border-radius: 12px; }
+    .brand img { width: 60px; height: 60px; border-radius: 14px; }
     .nav-links { display: flex; gap: 22px; align-items: center; }
     .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.95rem; font-weight: 500; transition: color 0.15s; }
     .nav-links a:hover { color: var(--text); }
 
     /* ---------- Hero ---------- */
-    .hero { padding: 88px 0 56px; text-align: center; }
+    .hero {
+      padding: 96px 0 88px;
+      text-align: center;
+      background: linear-gradient(to right, #050a24 0%, #140a2e 100%);
+    }
     .eyebrow {
       display: inline-block;
       padding: 6px 14px;
@@ -141,11 +145,8 @@
     /* ---------- Banner-style hero ---------- */
     .hero-banner {
       position: relative;
-      overflow: hidden;
-      padding: 64px 24px 56px;
-      border-radius: 24px;
+      padding: 0 24px;
       text-align: center;
-      background: linear-gradient(to right, #050a24 0%, #140a2e 100%);
     }
     .hero-banner h1 {
       margin: 0;
@@ -187,7 +188,7 @@
       box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
     }
     @media (max-width: 640px) {
-      .hero-banner { padding: 44px 16px 40px; }
+      .hero-banner { padding: 0 16px; }
       .hero-banner .sub::before, .hero-banner .sub::after { flex-basis: 40px; }
     }
 
@@ -424,8 +425,7 @@
   <header class="site-header">
     <nav class="wrap nav" aria-label="Main">
       <a class="brand" href="#top" aria-label="Heylon Studio home">
-        <img src="/icons/HeylonStudio.jpg" alt="">
-        <span>HeylonStudio</span>
+        <img src="/icons/HeylonStudio.jpg" alt="HeylonStudio">
       </a>
       <div class="nav-links">
         <a href="#apps">Apps</a>
