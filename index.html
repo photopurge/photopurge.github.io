@@ -39,7 +39,7 @@
       --grad: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 55%, #ec4899 100%);
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
     body {
       margin: 0;
       font-family: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -305,28 +305,26 @@
     .mission p { color: #d4d4de; max-width: 740px; margin: 0 auto 14px; font-size: 1.05rem; }
     .mission .tagline { color: var(--teal); font-weight: 700; }
 
-    /* ---------- Channel strip ---------- */
-    .channel {
+    /* ---------- YouTube playlists ---------- */
+    .playlists { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .playlist {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-      padding: 28px 32px;
-      border-radius: 22px;
+      flex-direction: column;
+      gap: 4px;
+      padding: 22px 24px;
+      border-radius: 18px;
       background: var(--surface);
       border: 1px solid var(--border);
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
     }
-    .channel h2 { margin: 0; font-size: 1.4rem; font-weight: 800; }
-    .channel p { margin: 4px 0 0; color: var(--muted); }
-    .btn-yt {
-      background: #ff0033;
-      border: none;
-      color: #fff;
-      font-weight: 700;
-      box-shadow: 0 8px 24px rgba(255, 0, 51, 0.3);
+    .playlist:hover {
+      transform: translateY(-3px);
+      background: var(--surface-strong);
+      border-color: rgba(139, 92, 246, 0.5);
     }
-    .btn-yt:hover { color: #fff; }
+    .playlist .series { color: var(--cyan); font-size: 0.85rem; font-weight: 600; }
+    .playlist .title { font-size: 1.15rem; font-weight: 700; }
 
     /* ---------- Footer ---------- */
     footer {
@@ -410,8 +408,7 @@
       .mission { padding: 26px 20px; }
       .app-card { padding: 22px; }
       .btn { flex: 1 1 auto; }
-      .channel { padding: 22px; }
-      .btn-yt { width: 100%; }
+      .playlists { grid-template-columns: 1fr; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -430,8 +427,8 @@
       <div class="nav-links">
         <a href="#apps">Apps</a>
         <a href="#about" class="hide-sm">About</a>
-        <a href="#channel" class="hide-sm">Channel</a>
-        <a href="#support">Support</a>
+        <a href="#playlists" class="hide-sm">Playlists</a>
+        <a href="#support" data-open-support>Support</a>
       </div>
     </nav>
   </header>
@@ -518,15 +515,29 @@
       </div>
     </section>
 
-    <!-- ===== YouTube channel ===== -->
-    <section id="channel">
+    <!-- ===== YouTube playlists ===== -->
+    <section id="playlists">
       <div class="wrap">
-        <div class="channel">
-          <div>
-            <h2>Stories, music &amp; discoveries on YouTube</h2>
-            <p>Tutorials, app walkthroughs and the stories behind the builds.</p>
-          </div>
-          <a class="btn btn-yt" href="https://www.youtube.com/@HeylonStudio" target="_blank" rel="noopener">Watch on YouTube</a>
+        <div class="section-head">
+          <h2>Watch on YouTube</h2>
+        </div>
+        <div class="playlists">
+          <a class="playlist" href="https://www.youtube.com/playlist?list=PLci9hOdL7YYM" target="_blank" rel="noopener">
+            <span class="series">Retire Roadmap</span>
+            <span class="title">Getting Started</span>
+          </a>
+          <a class="playlist" href="https://www.youtube.com/playlist?list=PLU5TCNKBr_PI" target="_blank" rel="noopener">
+            <span class="series">Retire Roadmap</span>
+            <span class="title">Retirement Scenarios</span>
+          </a>
+          <a class="playlist" href="https://www.youtube.com/playlist?list=PLVR-PJSz3Nzs" target="_blank" rel="noopener">
+            <span class="series">Your Future Self</span>
+            <span class="title">Choices That Shape Tomorrow</span>
+          </a>
+          <a class="playlist" href="https://www.youtube.com/playlist?list=PLdGE09C6r5f0" target="_blank" rel="noopener">
+            <span class="series">🎵 Life After Work</span>
+            <span class="title">Retirement Music &amp; Fun</span>
+          </a>
         </div>
       </div>
     </section>
